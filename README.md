@@ -15,7 +15,9 @@
 
 </div>
 
----
+
+
+
 
 ## 📖 Overview
 
@@ -68,7 +70,86 @@ This equation is translated into real-time voltage operations using the **TL074 
                ▼
           Binary Output
               (LED)
-⚙️ Working Principle1. Weighted Input StageThe input signal is scaled by an adjustable weight using an inverting/non-inverting operational amplifier configuration.$$\text{Output}_{\text{stage 1}} \propto W_i X_i$$$W_i$ = Synaptic Weight (Controlled via Potentiometer)$X_i$ = Input Signal (Voltage)2. Summation and Bias StageThe weighted signals are algebraically added together along with an adjustable bias voltage ($b$) to shift the net input:$$\text{Net Input} = \sum W_i X_i + b$$3. Activation Function (Hard Limiter)An op-amp comparator acts as the threshold activation function (Step Function):$$\text{Output} = \begin{cases} \text{HIGH (LED ON),} & \text{if } V_{\text{in}} > V_{\text{threshold}} \\ \text{LOW (LED OFF),} & \text{if } V_{\text{in}} \le V_{\text{threshold}} \end{cases}$$🧩 Components & ToolsHardware RequirementsComponentQuantityDescriptionTL074 Quad Op-Amp1Main processing unit (Summing & Comparator)10kΩ Potentiometer3Weight, Bias, and Threshold tuning10kΩ Resistor4Feedback and input mixing100kΩ Resistor1High gain scaling1kΩ Resistor2LED current limitingLED2Status and output displayBreadboard & Wires1Prototyping platformDual Power Supply1$\pm$9V DC supply railsSoftware UsedProteus 8 Professional – Circuit simulation and schematic capture.📁 Repository StructurePlaintext📂 Analog-Artificial-Neuron-Model
-│
-├
-📊 Results & Verification[x] Weighted Summation: Successfully verified with linear scaling.[x] Bias Adjustment: Positive and negative offset tracking confirmed.[x] Threshold Activation: Clean voltage comparator transitions.[x] Visual Output: LED switching responsive with zero bouncing.🌍 ApplicationsNeuromorphic Computing Hardware ResearchAnalog Signal Processing & Waveform ShapingAcademic Demonstrations in EEE & AI CoursesHardware-in-the-loop (HIL) Neural Simulations👨‍💻 AuthorFardin MeahDepartment of Electrical & Electronic Engineering (EEE)Let's connect! Feel free to reach out for collaborations.😉 "Bridging Artificial Intelligence with Analog Electronics."Give a ⭐ if this project inspired your hardware journey!
+
+```
+
+---
+
+## ⚙️ Working Principle
+
+### 1. Weighted Input Stage
+
+The input signal is scaled by an adjustable weight using an inverting/non-inverting operational amplifier configuration.
+
+
+$$\text{Output}_{\text{stage 1}} \propto W_i X_i$$
+
+* $W_i$ = Synaptic Weight (Controlled via Potentiometer)
+* $X_i$ = Input Signal (Voltage)
+
+### 2. Summation and Bias Stage
+
+The weighted signals are algebraically added together along with an adjustable bias voltage ($b$) to shift the net input:
+
+
+$$\text{Net Input} = \sum W_i X_i + b$$
+
+### 3. Activation Function (Hard Limiter)
+
+An op-amp comparator acts as the threshold activation function (Step Function):
+
+$$\text{Output} = \begin{cases} \text{HIGH (LED ON),} & \text{if } V_{\text{in}} > V_{\text{threshold}} \\ \text{LOW (LED OFF),} & \text{if } V_{\text{in}} \le V_{\text{threshold}} \end{cases}$$
+
+---
+
+## 🧩 Components, Software & Budget
+
+### Hardware Specifications & Cost Breakdown
+
+| Component | Quantity | Description | Estimated Cost (BDT) |
+| --- | --- | --- | --- |
+| **TL074 Quad Op-Amp** | 1 | Main processing unit (Summing & Comparator) | ৳ 35 |
+| **10kΩ Potentiometer** | 3 | Weight, Bias, and Threshold tuning | ৳ 45 |
+| **Resistors (10kΩ, 100kΩ, 1kΩ)** | 7 | Feedback, scaling, and current limiting | ৳ 10 |
+| **LED** | 2 | Status and output display | ৳ 10 |
+| **Breadboard** | 1 | Prototyping platform | ৳ 80 |
+| **Jumper Wires & Connectors** | 1 Set | Circuit interconnections | ৳ 30 |
+| **Dual Power Supply** | 1 | $\pm$9V DC supply rails | *Lab Equipment* |
+| **Total Estimated Cost** |  | **Pure Hardware Prototype** | **৳ 210** |
+
+### Software Used
+
+* **Proteus 8 Professional** – Circuit simulation and schematic capture.
+
+---
+
+## 📊 Results & Verification
+
+* [x] **Weighted Summation:** Successfully verified with linear scaling.
+* [x] **Bias Adjustment:** Positive and negative offset tracking confirmed.
+* [x] **Threshold Activation:** Clean voltage comparator transitions.
+* [x] **Visual Output:** LED switching responsive with zero bouncing.
+
+---
+
+## 🌍 Applications
+
+* Neuromorphic Computing Hardware Research
+* Analog Signal Processing & Waveform Shaping
+* Academic Demonstrations in EEE & AI Courses
+* Hardware-in-the-loop (HIL) Neural Simulations
+
+---
+
+## 👨‍💻 Author
+
+**Fardin Meah**
+
+* Student,Department of Electrical & Electronic Engineering (EEE)
+* Let's connect! Feel free to reach out for collaborations.
+
+---
+
+### 😉 "Bridging Artificial Intelligence with Analog Electronics."
+
+**Give a ⭐ if this project inspired your hardware journey!**
