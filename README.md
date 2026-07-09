@@ -143,7 +143,7 @@ $$\text{Output} = \begin{cases} \text{HIGH (LED ON),} & \text{if } V_{\text{in}}
 
 ## 👨‍💻 Author
 
-**Fardin Meah**
+** Fariyad Fardin Meah**
 
 * Student,Department of Electrical & Electronic Engineering (EEE)
 * Let's connect! Feel free to reach out for collaborations.
