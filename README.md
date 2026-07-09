@@ -4,252 +4,71 @@
 
 ### *Design & Implementation using TL074 Quad Operational Amplifier*
 
-<img src="images/banner.png" width="100%">
-
 <br>
 
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![Hardware](https://img.shields.io/badge/Hardware-TL074-blue?style=for-the-badge)
-![Simulation](https://img.shields.io/badge/Proteus-Verified-orange?style=for-the-badge)
-![Platform](https://img.shields.io/badge/EEE-Project-red?style=for-the-badge)
+[![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge&logo=github)](https://github.com)
+[![Hardware](https://img.shields.io/badge/Hardware-TL074-blue?style=for-the-badge&logo=hardware)](https://github.com)
+[![Simulation](https://img.shields.io/badge/Proteus-Verified-orange?style=for-the-badge&logo=circuitverse)](https://github.com)
+[![Platform](https://img.shields.io/badge/EEE-Project-red?style=for-the-badge&logo=academia)](https://github.com)
 
-### ⚡ Bringing Artificial Intelligence Concepts into Real Hardware
+<h4>⚡ Bringing Artificial Intelligence Concepts into Real Hardware ⚡</h4>
 
 </div>
 
 ---
 
-# 📖 Overview
+## 📖 Overview
 
-Artificial Neural Networks are normally implemented in software.
+Artificial Neural Networks (ANNs) are typically implemented using software algorithms. This project takes a different approach by demonstrating the hardware-level implementation of a **single artificial neuron using analog electronic circuits**.
 
-This project demonstrates how the fundamental operation of a **single artificial neuron** can be implemented entirely using **analog electronic circuits**.
+The fundamental mathematical neuron model is given by:
 
-The mathematical neuron equation
+$$y = f(\sum W_i X_i + b)$$
 
-```
-y = f(ΣWiXi + b)
-```
-
-is converted into real voltage operations using **TL074 Operational Amplifiers**, allowing the neuron to process an analog input signal and produce a digital-like decision.
+This equation is translated into real-time voltage operations using the **TL074 Quad Operational Amplifier**. The circuit seamlessly performs weighted summation, bias adjustment, and threshold-based activation to generate a distinct binary output signal.
 
 ---
 
-# ✨ Key Features
+## ✨ Key Features
 
-🧠 Analog Artificial Neuron
-
-⚖ Adjustable Synaptic Weight
-
-🎚 Adjustable Bias Voltage
-
-🚦 Adjustable Threshold Level
-
-💡 LED Output Indication
-
-📈 Real-Time Signal Processing
-
-🔬 Proteus Simulation
-
-🛠 Hardware Breadboard Implementation
+* 🧠 **Analog Artificial Neuron Implementation** – Pure hardware-based decision making.
+* ⚖️ **Adjustable Synaptic Weight** – Fine-tune input sensitivity.
+* 🎚️ **Adjustable Bias Voltage** – Shift the activation baseline easily.
+* 🚦 **Adjustable Threshold Level** – Flexible control over the activation function trigger point.
+* 💡 **LED Output Indication** – Immediate visual feedback of the neuron's state.
+* 📈 **Real-Time Signal Processing** – Zero algorithmic latency.
+* 🔬 **Proteus Simulation Verification** – Fully tested pre-hardware design.
+* 🛠️ **Breadboard Implementation** – Robust and clean physical prototyping.
 
 ---
 
-# 🏗 System Architecture
+## 🏗️ System Architecture
 
 ```text
-      Input Signal
-            │
-            ▼
- ┌────────────────────┐
- │ Weight Multiplier  │
- └────────────────────┘
-            │
-            ▼
- ┌────────────────────┐
- │ Summing + Bias     │
- └────────────────────┘
-            │
-            ▼
- ┌────────────────────┐
- │ Activation Unit    │
- │ (Comparator)       │
- └────────────────────┘
-            │
-            ▼
-      Binary Output
-         (LED)
-```
-
----
-
-# 📸 Project Gallery
-
-## Circuit Diagram
-
-<p align="center">
-<img src="images/circuit.png" width="900">
-</p>
-
----
-
-## Hardware Prototype
-
-<p align="center">
-<img src="images/hardware.jpg" width="700">
-</p>
-
----
-
-## Testing
-
-<p align="center">
-<img src="images/testing.jpg" width="700">
-</p>
-
----
-
-## Output Waveform
-
-<p align="center">
-<img src="images/output.png" width="800">
-</p>
-
----
-
-# ⚙ Working Principle
-
-### Stage 1
-
-Weighted Input
-
-The input sine wave is amplified according to the selected weight.
-
----
-
-### Stage 2
-
-Bias Addition
-
-A controllable DC bias shifts the signal vertically, representing neuron bias.
-
----
-
-### Stage 3
-
-Activation Function
-
-The comparator compares the input signal with a threshold voltage.
-
-```
-Input > Threshold
-        ↓
-     Output = HIGH
-
-Input < Threshold
-        ↓
-     Output = LOW
-```
-
----
-
-# 🧩 Components
-
-| Component | Quantity |
-|-----------|---------:|
-| TL074 Quad Op-Amp | 1 |
-| 10k Potentiometer | 3 |
-| 10k Resistor | 4 |
-| 100k Resistor | 1 |
-| 1k Resistor | 2 |
-| LEDs | 2 |
-| Breadboard | 1 |
-| ±9V Supply | 1 |
-
----
-
-# 💻 Software
-
-- Proteus 8 Professional
-
----
-
-# 📁 Repository Structure
-
-```text
-📂 Analog-Artificial-Neuron-Model
+          Input Signal
+               │
+               ▼
+     ┌──────────────────┐
+     │ Weight Adjustment │
+     │   (Multiplier)    │
+     └──────────────────┘
+               │
+               ▼
+     ┌──────────────────┐
+     │ Summing Amplifier │
+     │  + Bias Addition  │
+     └──────────────────┘
+               │
+               ▼
+     ┌──────────────────┐
+     │ Activation Unit  │
+     │   Comparator     │
+     └──────────────────┘
+               │
+               ▼
+          Binary Output
+              (LED)
+⚙️ Working Principle1. Weighted Input StageThe input signal is scaled by an adjustable weight using an inverting/non-inverting operational amplifier configuration.$$\text{Output}_{\text{stage 1}} \propto W_i X_i$$$W_i$ = Synaptic Weight (Controlled via Potentiometer)$X_i$ = Input Signal (Voltage)2. Summation and Bias StageThe weighted signals are algebraically added together along with an adjustable bias voltage ($b$) to shift the net input:$$\text{Net Input} = \sum W_i X_i + b$$3. Activation Function (Hard Limiter)An op-amp comparator acts as the threshold activation function (Step Function):$$\text{Output} = \begin{cases} \text{HIGH (LED ON),} & \text{if } V_{\text{in}} > V_{\text{threshold}} \\ \text{LOW (LED OFF),} & \text{if } V_{\text{in}} \le V_{\text{threshold}} \end{cases}$$🧩 Components & ToolsHardware RequirementsComponentQuantityDescriptionTL074 Quad Op-Amp1Main processing unit (Summing & Comparator)10kΩ Potentiometer3Weight, Bias, and Threshold tuning10kΩ Resistor4Feedback and input mixing100kΩ Resistor1High gain scaling1kΩ Resistor2LED current limitingLED2Status and output displayBreadboard & Wires1Prototyping platformDual Power Supply1$\pm$9V DC supply railsSoftware UsedProteus 8 Professional – Circuit simulation and schematic capture.📁 Repository StructurePlaintext📂 Analog-Artificial-Neuron-Model
 │
-├── README.md
-├── Project_Report.pdf
-│
-├── images
-│   ├── banner.png
-│   ├── circuit.png
-│   ├── hardware.jpg
-│   ├── testing.jpg
-│   └── output.png
-│
-├── circuit
-│   ├── Artificial_Neuron.pdsprj
-│   └── Artificial_Neuron.pdsn
-│
-├── datasheets
-│   └── TL074.pdf
-│
-└── simulation
-    └── waveform.png
-```
-
----
-
-# 📊 Results
-
-✅ Weighted Summation Verified
-
-✅ Bias Adjustment Verified
-
-✅ Threshold Activation Verified
-
-✅ Comparator Operation Verified
-
-✅ LED Switching Verified
-
----
-
-# 🌍 Applications
-
-- Artificial Intelligence Education
-- Neuromorphic Computing
-- Analog Signal Processing
-- Electronic Circuit Learning
-- Hardware Neural Networks
-
----
-
-# 📚 Documentation
-
-📄 Full Project Report
-
-📐 Circuit Diagram
-
-📷 Hardware Images
-
-📈 Simulation Results
-
----
-
-# 👨‍💻 Author
-
-## **Fardin Meah**
-
-Electrical & Electronic Engineering (EEE)
-
----
-
-<div align="center">
-
-## ⭐ Star this repository if you found it useful!
-
-*"Bridging Artificial Intelligence with Analog Electronics."*
-
-</div>
+├
+📊 Results & Verification[x] Weighted Summation: Successfully verified with linear scaling.[x] Bias Adjustment: Positive and negative offset tracking confirmed.[x] Threshold Activation: Clean voltage comparator transitions.[x] Visual Output: LED switching responsive with zero bouncing.🌍 ApplicationsNeuromorphic Computing Hardware ResearchAnalog Signal Processing & Waveform ShapingAcademic Demonstrations in EEE & AI CoursesHardware-in-the-loop (HIL) Neural Simulations👨‍💻 AuthorFardin MeahDepartment of Electrical & Electronic Engineering (EEE)Let's connect! Feel free to reach out for collaborations.😉 "Bridging Artificial Intelligence with Analog Electronics."Give a ⭐ if this project inspired your hardware journey!
